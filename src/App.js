@@ -5,44 +5,42 @@ import './categories.styles.scss'; // Assuming you have a CSS file for categorie
 const App = () => {
 	const categories = [
 		{
-			title: 'hatchbacks',
 			id: 1,
-			image:
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			title: 'hatchback',
+			imageUrl: 'https://i.imgur.com/3Q1JjzL.png', // Simple hatchback
 		},
 		{
-			title: 'sedans',
 			id: 2,
-			image:
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			title: 'saloon',
+			imageUrl: 'https://i.imgur.com/5t5uW7v.png', // Simple saloon
 		},
 		{
-			title: 'suv',
 			id: 3,
-			image:
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			title: 'SUV',
+			imageUrl: 'https://i.imgur.com/VvJgZ3P.png', // Simple SUV
 		},
 		{
-			title: 'crossover',
 			id: 4,
-			image:
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			title: 'coupe',
+			imageUrl: 'https://i.imgur.com/7QY9jJk.png', // Simple coupe
 		},
 		{
-			title: 'roadster',
 			id: 5,
-			image:
-				'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+			title: 'convertible',
+			imageUrl: 'https://i.imgur.com/2T7JtN2.png', // Simple convertible
 		},
 	];
 	return (
 		<div className="categories-container">
-			{categories.map(({ title, id }) => (
+			{categories.map(({ title, id, imageUrl }) => (
 				<div
 					className="category-container"
 					key={id}
 				>
-					<div className="background-image" />
+					<div
+						className="background-image"
+						style={{ backgroundImage: `url(${imageUrl})` }}
+					/>
 					<div className="category-body-container">
 						<h2 className="category-title">{title}</h2>
 						<p>Buy now</p>
